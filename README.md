@@ -8,6 +8,7 @@ If you have a critical bucket which is not public and you want to get alerts usi
 
 1. Create the lambda function using update_bucket_policy_r53_health_checkips.py
 1. Create a new SNS trigger for the Lambda Function using CLI commands below.
-      aws sns subscribe --topic-arn "arn:aws:sns:us-east-1:806199016981:AmazonIpSpaceChanged" --protocol lambda --notification-endpoint "YourLambdaARN" --region "us-east-1"
 
-      aws lambda add-permission --function-name "YourLambdaARN" --statement-id "HealthCheckSG_Lam" --action "lambda:InvokeFunction" --principal "sns.amazonaws.com" --source-arn "arn:aws:sns:us-east-1:806199016981:AmazonIpSpaceChanged"
+            aws sns subscribe --topic-arn "arn:aws:sns:us-east-1:806199016981:AmazonIpSpaceChanged" --protocol lambda --notification-endpoint "YourLambdaARN" --region "us-east-1"
+
+            aws lambda add-permission --function-name "YourLambdaARN" --statement-id "HealthCheckSG_Lam" --action "lambda:InvokeFunction" --principal "sns.amazonaws.com" --source-arn "arn:aws:sns:us-east-1:806199016981:AmazonIpSpaceChanged"
